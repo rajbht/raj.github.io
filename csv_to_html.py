@@ -5,17 +5,14 @@ import pandas as pd
 def csv_html(filename):
     # to read csv file named "samplee"
     a = pd.read_csv(filename)
-    
-    # to save as html file
-    # named as "Table"
     a.to_html(filename.replace("csv","htm"))
-    
-    # assign it to a 
-    # variable (string)
     html_file = a.to_html()
 
-
-if __name__ == "__main__":
+if __name__ == "__main__":    
+    print("Building NY school rankings page ...")
     csv_html("NY_school_rankings.csv")
+    print("done.")
+    print("Building NJ school rankings page ...")
     csv_html("NJ_school_rankings.csv")
+    print("done.")
     
